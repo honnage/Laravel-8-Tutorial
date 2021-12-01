@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FluentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +27,20 @@ Route::get('/', [ProductController::class, 'index'])->name('product.index');
 Route::get('/home/{name}', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
+
+Route::get('/posts', [ClientController::class, 'getAllPost'])->name('posts.getallpost');
+
+Route::get('/posts/{id}', [ClientController::class, 'getPostById'])->name('posts.getpostbyid');
+
+Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpost');
+
+Route::get('/upload-post', [ClientController::class, 'uploadPost'])->name('posts.update');
+
+Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
+
+Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');
+
+
+
+
+
